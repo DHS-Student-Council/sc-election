@@ -1,0 +1,1 @@
+This folder will be populated with all images and videos needed.
