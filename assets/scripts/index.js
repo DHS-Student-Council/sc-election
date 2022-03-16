@@ -1,4 +1,6 @@
 $( function() {
+    loadNavBar("homepage");
+
     for(var i  = 0; i < 3; i++) {
         contents = $('#template').html();
         copy = $(`<div id=item${i}></div>`);
@@ -7,4 +9,5 @@ $( function() {
         $(`#item${i} h1`).text(`ITEM${i}`);
         $(`#item${i} p`).text(`Hi! I am item number ${i}.`);
     }
+
 });
