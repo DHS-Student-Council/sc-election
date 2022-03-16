@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0.21/src/jquery.csv.min.js"></script>
     <link href="./assets/styles/main.css" rel="stylesheet">
     <title>DHS Elections</title>
 </head>
@@ -18,17 +19,18 @@
     </div>
 
     <template id="template">
-        <div>
-            <h1></h1>
-            <p></p>
+        <div class="text-center">
+            <h2 class="identifier"></h2>
+            <img class="picture" width="200"/>
+            <p class="name"></p>
         </div>
     </template>
 
-    <div id="item-placeholder">
-
+    <div id="item-placeholder" class="row">
+        <!-- placeholder for candidate items populated by JS -->
     </div>
 
-    <script src="./assets/scripts/nav.js" defer></script>
+    <script src="./assets/scripts/nav.js"></script>
     <script src="./assets/scripts/index.js" defer></script>
 </body>
 </html>
