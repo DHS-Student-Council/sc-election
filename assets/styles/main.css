@@ -20,7 +20,7 @@ body, html {
 
 /* * transfer * */
 
-
+/* MENU.HTML */
 .row img {
     width: 95% !important;
 }
@@ -28,4 +28,10 @@ body, html {
 .menudisplay {
     padding-right: 10vw;
     padding-left: 10vw;
+}
+
+/* VIEWER.HTML */
+#picture {
+    max-height: 95vh;
+    max-width: 95vw;
 }
