@@ -17,6 +17,7 @@ function processData(rawdata) {
 
         $(`#item${i+1} .identifier`).text(data[i]["Candidate's ID"]);
         $(`#item${i+1} .picture`).attr("src",`./assets/img/experimental/${data[i]["Catalog (Thumbnail)"]}`);
+        $(`#item${i+1} a`).attr("href", `./viewer.html?id=${data[i]["Candidate's ID"]}`);
         $(`#item${i+1} .name`).text(data[i]["Candidate's Name"]);
     }
 }
