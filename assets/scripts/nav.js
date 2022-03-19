@@ -1,6 +1,6 @@
-function loadNavBar (pageID) {
+$( function() {
     $("#nav-placeholder").load("./templates/nav.html", function() {
-        $(`#${pageID}`).addClass("active");
-        $(`#${pageID}`).attr("aria-current", "page");
+        $("a[href*='" + location.pathname + location.search + "']").addClass("active");
+        $("a[href*='" + location.pathname + location.search + "']").attr("aria-current", "page");
     });
-}
+});
