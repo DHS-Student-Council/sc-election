@@ -1,6 +1,31 @@
+body, html {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+.row {
+    margin: 0 !important;
+}
+
 .navbar img {
     height: 1.5em;
 }
 .navbar, .navbar h1 {
     font-size: 1em;
+}
+
+/* * transfer * */
+
+
+.row img {
+    width: 95% !important;
+}
+
+.menudisplay {
+    padding-right: 10vw;
+    padding-left: 10vw;
 }
