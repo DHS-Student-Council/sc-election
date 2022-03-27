@@ -59,7 +59,7 @@ function renderPage(rawdata, param_dict) {
 
         } else if (enableDiv[cat] === "displayimage") {
             let CSVHeaderName = CSVHeader[param_dict["cat"]];
-            let filepath = data[i][CSVHeader[param_dict["cat"]]];
+            let filepath = data[i][CSVHeaderName];
             if (filepath === "") {
                 $(`#picture`).attr("src","./assets/img/coming-soon.png");
             } else {
@@ -67,7 +67,8 @@ function renderPage(rawdata, param_dict) {
             }
     
         } else {
-            let videolink = `https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4`
+            let CSVHeaderName = CSVHeader[param_dict["cat"]];
+            let videolink = data[i][CSVHeaderName];
             const videohtml = `
             <video id="player" playsinline controls data-poster="">
                 <source id="vidsrc" src="${videolink}" type="video/mp4" />

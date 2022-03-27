@@ -57,3 +57,7 @@ body, html {
     max-height: 95vh;
     max-width: 95vw;
 }
+.plyr {
+    height: 95vh;
+    min-height: 100%;
+}
