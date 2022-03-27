@@ -8,31 +8,35 @@
             <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link" href="./">Home Page</a>
+                <a class="nav-link" href="./" id="homepage">Homepage</a>
             </li>
             
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarJHDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarJHDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-headertype="jh">
                 Junior High
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarJHDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Candidate Catalog</a></li>
-                <li><a class="dropdown-item" href="#">Task #0</a></li>
-                <li><a class="dropdown-item" href="#">Task #1</a></li>
-                </ul>
-            </li>
-                
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarSHDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Senior High
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarSHDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Candidate Catalog</a></li>
-                <li><a class="dropdown-item" href="#">Task #0</a></li>
-                <li><a class="dropdown-item" href="#">Task #1</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=jh&cat=catalog">Candidates Catalog</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=jh&cat=profile">Candidates Profile</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=jh&cat=introvid">Introductory Videos</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=jh&cat=dtalk">D'TALK</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=jh&cat=group">Group Infographic</a></li>
                 </ul>
             </li>
 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarSHDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-headertype="sh">
+                Senior High
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarSHDropdownMenuLink">
+                <li><a class="dropdown-item" href="./menu.html?type=sh&cat=catalog">Candidates Catalog</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=sh&cat=profile">Candidates Profile</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=sh&cat=introvid">Introductory Videos</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=sh&cat=dtalk">D'TALK</a></li>
+                <li><a class="dropdown-item" href="./menu.html?type=sh&cat=group">Group Infographic</a></li>
+                </ul>
+            </li>
+                
             <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarPDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 President
@@ -45,11 +49,11 @@
             </li>  -->
 
             <li class="nav-item" id="navbarPDropdownMenuLink">
-                <a class="nav-link" href="#">President</a>
+                <a class="nav-link" href="./upcoming.html?type=p" data-headertype="p">President</a>
             </li>
 
             <!-- <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="navbarHCDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarHCDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-headertype="hc">
                 House Captain
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarHCDropdownMenuLink">
@@ -62,7 +66,7 @@
             </li> -->
 
             <li class="nav-item" id="navbarHCDropdownMenuLink">
-                <a class="nav-link" href="#">House Captain</a>
+                <a class="nav-link" href="./upcoming.html?type=hc" data-headertype="hc">House Captain</a>
             </li>
 
             </ul>
