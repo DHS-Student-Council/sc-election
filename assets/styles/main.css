@@ -35,15 +35,19 @@ body, html {
     text-decoration: none;
 }
 
-#desc {
+#taskdesc {
     font-size: 1.2em;
     border-top: 1px solid white;
     max-width:40em;
     margin: auto;
 }
 
-#jh-header {
+#header.jh {
     background-color: navy;
+}
+
+#header.sh {
+    background-color: maroon;
 }
 
 /* VIEWER.HTML */
