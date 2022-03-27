@@ -17,8 +17,8 @@ const taskdesc = {
 const CSVHeader = {
     "catalog": "catalog",
     "profile": "profile",
-    "introvid": "introvid-vid",
-    "dtalk": "dtalk-vid",
+    "introvid": "introvid-thumbnail",
+    "dtalk": "dtalk-thumbnail",
     "group": "group"
 }
 
@@ -69,8 +69,8 @@ function processData(rawdata) {
 
         // change text and attributes of template
         $(`#item${i+1} .identifier`).text(data[i]["id"]);
-        let filepath = `./candidate-data/experimental/${data[i][CSVHeader[param_dict["cat"]]]}`;
-        if (filepath === "./candidate-data/experimental/") {
+        let filepath = data[i][CSVHeader[param_dict["cat"]]];
+        if (filepath === "") {
             $(`#item${i+1} .picture`).attr("src","./assets/img/coming-soon.png");
         } else {
             $(`#item${i+1} .picture`).attr("src",filepath);
