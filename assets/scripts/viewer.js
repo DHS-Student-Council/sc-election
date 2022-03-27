@@ -12,6 +12,13 @@ const CSVHeader = {
     "dtalk": "dtalk-vid",
     "group": "group"
 }
+const taskname = {
+    "catalog": "Candidates Catalog",
+    "profile": "Candidates Profile",
+    "introvid": "Introductory Videos",
+    "dtalk": "D'TALK",
+    "group": "Group Infographic"
+}
 
 $( function() {
     params = new URLSearchParams(window.location.search);
@@ -30,42 +37,46 @@ $( function() {
 
 function renderPage(rawdata, param_dict) {
     let data = $.csv.toObjects(rawdata)
-
     let cat = param_dict["cat"]
-    $(`#${enableDiv[cat]}`).removeClass('d-none')
-    if (enableDiv[cat] === "displayfullprofile") {
 
-    } else if (enableDiv[cat] === "displayimage") {
-        let candidate = param_dict["id"]
-        let successfulRender = false;
-        for (var i = 0; i < data.length; i++) {
-            if (data[i]["id"].toLowerCase() === candidate.toLowerCase()) {
-                $(`#candidate-info`).text(`${data[i]["id"]} - ${data[i]["name"]}`);
-                let CSVHeaderName = CSVHeader[param_dict["cat"]]
-                console.log(param_dict["cat"])
-                console.log(CSVHeaderName)
-                $(`#picture`).attr("src",`./candidate-data/experimental/${data[i][CSVHeaderName]}`);
-                successfulRender = true;
-                break;
-            }
-        }
-        if(!successfulRender) {
-            $(`#candidate-info`).text("Error: The queried ID does not exist");
-        }
+    let candidate = param_dict["id"]
+    let fullCandidateInfo = {}
+    let successfulRender = false;
 
-    } else {
-        let videolink = `https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4`
-        const videohtml = `
-        <video id="player" playsinline controls data-poster="">
-            <source id="vidsrc" src="${videolink}" type="video/mp4" />
-        </video>
-        `;
-        $("#displayvideo").append(videohtml);
-        const player = new Plyr('#player', {
-            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
-        });
-        window.player = player;  
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]["id"].toLowerCase() === candidate.toLowerCase()) {
+            fullCandidateInfo = data[i]
+            $(`#candidate-info`).text(`${fullCandidateInfo["id"]} - ${fullCandidateInfo["name"]}`);
+            successfulRender = true;
+            break;
+        }
     }
+
+    if (successfulRender) {
+        $(`#${enableDiv[cat]}`).removeClass('d-none')
+        if (enableDiv[cat] === "displayfullprofile") {
+
+        } else if (enableDiv[cat] === "displayimage") {
+            let CSVHeaderName = CSVHeader[param_dict["cat"]];
+            $(`#picture`).attr("src",`./candidate-data/experimental/${fullCandidateInfo[CSVHeaderName]}`);
+    
+        } else {
+            let videolink = `https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4`
+            const videohtml = `
+            <video id="player" playsinline controls data-poster="">
+                <source id="vidsrc" src="${videolink}" type="video/mp4" />
+            </video>
+            `;
+            $("#displayvideo").append(videohtml);
+            const player = new Plyr('#player', {
+                controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+            });
+            window.player = player;  
+        }
+    } else {
+        $(`#candidate-info`).text(`Error: Queried ID does not exist (please return to homepage)`);
+    }
+    
 
 
 
