@@ -58,7 +58,13 @@ function renderPage(rawdata, param_dict) {
 
         } else if (enableDiv[cat] === "displayimage") {
             let CSVHeaderName = CSVHeader[param_dict["cat"]];
-            $(`#picture`).attr("src",`./candidate-data/experimental/${fullCandidateInfo[CSVHeaderName]}`);
+            let filepath = `./candidate-data/experimental/${data[i][CSVHeader[param_dict["cat"]]]}`;
+            if (filepath === "./candidate-data/experimental/") {
+                $(`#picture`).attr("src","./assets/img/coming-soon.png");
+            } else {
+                $(`#picture`).attr("src",filepath);
+            }
+            // $(`#picture`).attr("src",`./candidate-data/experimental/${fullCandidateInfo[CSVHeaderName]}`);
     
         } else {
             let videolink = `https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4`

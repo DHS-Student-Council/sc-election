@@ -14,6 +14,14 @@ const taskdesc = {
     "group": "Groups create initiatives based off SC related keywords"
 }
 
+const CSVHeader = {
+    "catalog": "catalog",
+    "profile": "profile",
+    "introvid": "introvid-vid",
+    "dtalk": "dtalk-vid",
+    "group": "group"
+}
+
 
 $( function() {
     $.ajax({
@@ -61,8 +69,13 @@ function processData(rawdata) {
 
         // change text and attributes of template
         $(`#item${i+1} .identifier`).text(data[i]["id"]);
-        $(`#item${i+1} .picture`).attr("src",`./candidate-data/experimental/${data[i]["catalog"]}`);
-        $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}: Catalog`);
+        let filepath = `./candidate-data/experimental/${data[i][CSVHeader[param_dict["cat"]]]}`;
+        if (filepath === "./candidate-data/experimental/") {
+            $(`#item${i+1} .picture`).attr("src","./assets/img/coming-soon.png");
+        } else {
+            $(`#item${i+1} .picture`).attr("src",filepath);
+        }
+        $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}`);
         $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["id"]}`);
         $(`#item${i+1} .name`).text(data[i]["name"]);
     }
