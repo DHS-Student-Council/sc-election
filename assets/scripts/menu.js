@@ -22,11 +22,18 @@ const CSVHeader = {
     "group": "group"
 }
 
+let param_dict = {};
 
 $( function() {
+    // gets javascript object of search parameters
+    params = new URLSearchParams(window.location.search);
+    for (const param of params) {
+        param_dict[param[0]] = param[1];
+    }
+
     $.ajax({
         type: "GET",
-        url: "./candidate-data/datasheets/jh_candidates.csv",
+        url: `./candidate-data/datasheets/${param_dict["type"]}_candidates.csv`,
         dataType: "text",
         success: function(data) {processData(data);}
      });
@@ -35,13 +42,6 @@ $( function() {
 function processData(rawdata) {
     // converts csv data array of objects
     var data = $.csv.toObjects(rawdata);
-
-    // gets javascript object of search parameters
-    params = new URLSearchParams(window.location.search);
-    param_dict = {};
-    for (const param of params) {
-        param_dict[param[0]] = param[1];
-    }
 
     // only render valid cat and type queries
     if(param_dict["cat"] in taskname && (param_dict["type"]==="jh" || param_dict["type"]==="sh")) {

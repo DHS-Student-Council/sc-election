@@ -20,9 +20,10 @@ const taskname = {
     "group": "Group Infographic"
 }
 
+let param_dict = {};
+
 $( function() {
     params = new URLSearchParams(window.location.search);
-    param_dict = {};
     for (const param of params) {
         param_dict[param[0]] = param[1];
     }
