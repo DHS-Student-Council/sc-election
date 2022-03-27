@@ -42,10 +42,12 @@ body, html {
     margin: auto;
 }
 
+#header {
+    background-color: gray;
+}
 #header.jh {
     background-color: navy;
 }
-
 #header.sh {
     background-color: maroon;
 }

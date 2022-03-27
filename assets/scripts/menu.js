@@ -25,30 +25,41 @@ $( function() {
 });
 
 function processData(rawdata) {
-    var data = $.csv.toObjects(rawdata)
-    console.log(data)
-    for(var i  = 0; i < data.length; i++) {
-        params = new URLSearchParams(window.location.search);
-        param_dict = {};
-        for (const param of params) {
-            param_dict[param[0]] = param[1];
-        }
+    // converts csv data array of objects
+    var data = $.csv.toObjects(rawdata);
 
+    // gets javascript object of search parameters
+    params = new URLSearchParams(window.location.search);
+    param_dict = {};
+    for (const param of params) {
+        param_dict[param[0]] = param[1];
+    }
+
+    // only render valid cat and type queries
+    if(param_dict["cat"] in taskname && (param_dict["type"]==="jh" || param_dict["type"]==="sh")) {
+        // change text to match taskname (based on 'cat' in search params)
         $(`#taskname`).text(`${param_dict["type"].toUpperCase()}: ${taskname[param_dict["cat"]]}`);
+        // change description to match taskname (based on 'cat' in search params)
         let description = taskdesc[param_dict["cat"]];
         if (description !== "") {
             $(`#taskdesc`).removeClass("d-none");
             $(`#taskname`).addClass("mb-3");
             $(`#taskdesc`).text(description);
         }
-
+        // add class for different colouring (based on 'type' in search params)
         $(`#header`).addClass(param_dict["type"])
+    } else {
+        $(`#taskname`).text(`Error: Invalid parameters (please return to homepage)`);
+    }
+    
 
-
+    for(var i  = 0; i < data.length; i++) {
+        // get contents of template and duplicate (to generate all candidate items)
         contents = $('#template').html();
         copy = $(`<div id=item${i+1} class="col-lg-4 col-md-6"></div>`);
         $('#item-placeholder').append(copy.append(contents));
 
+        // change text and attributes of template
         $(`#item${i+1} .identifier`).text(data[i]["id"]);
         $(`#item${i+1} .picture`).attr("src",`./candidate-data/experimental/${data[i]["catalog-thumbnail"]}`);
         $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}: Catalog`);
