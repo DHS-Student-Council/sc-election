@@ -10,6 +10,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0.21/src/jquery.csv.min.js"></script>
+
+    <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
+
     <link href="./assets/styles/main.css" rel="stylesheet">
     <title>DHS Elections</title>
 </head>
@@ -19,15 +23,27 @@
 
     </div>
 
-    <div class="container-fluid text-center p-5 bg-secondary bg-gradient text-white mb-4" id="jh-header">
+    <div class="container-fluid text-center p-5 bg-secondary bg-gradient text-white mb-4" id="header">
         <h1 id="candidate-info"></h1>
     </div>
-    <div class="text-center">
+
+    <div class="container mb-4 mt-3 d-none"  id="displayvideo">
+        <!-- video player -->
+        
+    </div>
+
+    <div class="container text-center mb-4 mt-3 d-none" id="displayimage">
+        <!-- image display player -->
         <img id="picture"/> 
+    </div>
+
+    <div class="container d-none" id="displayfullprofile">
+        <!-- to be updated with darrius' html -->
     </div>
 
     <script src="./assets/scripts/nav.js" async></script>
     <script src="./assets/scripts/viewer.js" async></script>
+    <script src="./assets/scripts/videoplayer.js" async></script>
     
 </body>
 </html>

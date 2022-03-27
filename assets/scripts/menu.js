@@ -61,9 +61,9 @@ function processData(rawdata) {
 
         // change text and attributes of template
         $(`#item${i+1} .identifier`).text(data[i]["id"]);
-        $(`#item${i+1} .picture`).attr("src",`./candidate-data/experimental/${data[i]["catalog-thumbnail"]}`);
+        $(`#item${i+1} .picture`).attr("src",`./candidate-data/experimental/${data[i]["catalog"]}`);
         $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}: Catalog`);
-        $(`#item${i+1} a`).attr("href", `./viewer.html?id=${data[i]["id"]}`);
+        $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["id"]}`);
         $(`#item${i+1} .name`).text(data[i]["name"]);
     }
 }
