@@ -30,5 +30,6 @@ def update(cat):
 
 
     df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv")
+    print(cat, "CSV update completed")
 
 update("sh")

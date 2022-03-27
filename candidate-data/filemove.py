@@ -12,5 +12,3 @@ for i in range(len(list_of_ids)):
     for filename in os.listdir("./thumbnails"):
         if list_of_ids[i] in filename:
             os.rename("./thumbnails/" + filename, newpath + filename)
-
-    # print("\n")
