@@ -1,0 +1,18 @@
+#picture {
+    max-height: 95vh;
+    max-width: 95vw;
+}
+.plyr {
+    height: 95vh;
+    min-height: 100%;
+}
+
+#header {
+    background-color: #666;
+}
+#header.jh {
+    background-color: navy;
+}
+#header.sh {
+    background-color: maroon;
+}

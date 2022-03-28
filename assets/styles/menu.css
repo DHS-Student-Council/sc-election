@@ -1,0 +1,30 @@
+.row img {
+    width: 95% !important;
+}
+
+.menudisplay {
+    padding-right: 10vw;
+    padding-left: 10vw;
+}
+
+#item-placeholder a {
+    color: black;
+    text-decoration: none;
+}
+
+#taskdesc {
+    font-size: 1.2em;
+    border-top: 1px solid white;
+    max-width:40em;
+    margin: auto;
+}
+
+#header {
+    background-color: #666;
+}
+#header.jh {
+    background-color: navy;
+}
+#header.sh {
+    background-color: maroon;
+}

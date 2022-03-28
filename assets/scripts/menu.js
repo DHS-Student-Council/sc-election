@@ -74,7 +74,7 @@ function processData(rawdata, isIndividual) {
     for(var i  = 0; i < data.length; i++) {
         // get contents of template and duplicate (to generate all candidate items)
         contents = $('#template').html();
-        copy = $(`<div id=item${i+1} class="col-lg-4 col-md-6 text-center"></div>`);
+        copy = $(`<div id=item${i+1} class="col-lg-4 col-md-6 text-center my-2"></div>`);
         $('#item-placeholder').append(copy.append(contents));
 
         // change text and attributes of template

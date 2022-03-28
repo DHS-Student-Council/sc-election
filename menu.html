@@ -10,7 +10,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0.21/src/jquery.csv.min.js"></script>
+
     <link href="./assets/styles/main.css" rel="stylesheet">
+    <link href="./assets/styles/menu.css" rel="stylesheet">
+
     <title>DHS Elections</title>
 </head>
 <body>
@@ -23,17 +26,19 @@
         <a class="text-center">
             <h2 class="identifier"></h2>
             <img class="picture"/>
-            <p class="name"></p>
+            <p class="name h3"></p>
         </a>
     </template>
 
-    <div class="container-fluid text-center p-5 bg-gradient text-white mb-5" id="header">
+    <div class="container-fluid text-center p-5 bg-gradient text-white mb-4" id="header">
         <h1 id="taskname"></h1>
         <p id="taskdesc" class="pt-2 d-none"></p>
     </div>
     
-    <div id="item-placeholder" class="row menudisplay">
-        <!-- placeholder for candidate items populated by JS -->
+    <div class="my-4">
+        <div id="item-placeholder" class="row menudisplay">
+            <!-- placeholder for candidate items populated by JS -->
+        </div>
     </div>
 
     <script src="./assets/scripts/nav.js" async></script>

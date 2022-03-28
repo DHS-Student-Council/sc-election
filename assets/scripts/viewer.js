@@ -53,6 +53,8 @@ function renderIndivPage(rawdata) {
     let data = $.csv.toObjects(rawdata)
     let cat = param_dict["cat"]
 
+    $(`#header`).addClass(param_dict["type"])
+
     let candidate = param_dict["id"]
     let fullCandidateInfo = {}
     let successfulRender = false;
@@ -94,6 +96,7 @@ function renderIndivPage(rawdata) {
             window.player = player;  
         }
     } else {
+        $(`#header`).removeClass(param_dict["type"])
         $(`#candidate-info`).text(`Error: Queried ID does not exist (please return to homepage)`);
     }
 }
@@ -101,6 +104,8 @@ function renderIndivPage(rawdata) {
 function renderGroupPage(rawdata) {
     let data = $.csv.toObjects(rawdata)
     let cat = param_dict["cat"]
+
+    $(`#header`).addClass(param_dict["type"])
 
     let group = param_dict["id"]
     let fullCandidateInfo = {}
@@ -125,6 +130,7 @@ function renderGroupPage(rawdata) {
             $(`#picture`).attr("src",filepath);
         }
     } else {
+        $(`#header`).removeClass(param_dict["type"])
         $(`#candidate-info`).text(`Error: Queried ID does not exist (please return to homepage)`);
     }
 
