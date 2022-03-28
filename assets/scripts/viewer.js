@@ -10,7 +10,7 @@ const CSVHeader = {
     "profile": "profile",
     "introvid": "introvid-vid",
     "dtalk": "dtalk-vid",
-    "group": "group"
+    "group": "infographic"
 }
 const taskname = {
     "catalog": "Candidates Catalog",
@@ -28,15 +28,28 @@ $( function() {
         param_dict[param[0]] = param[1];
     }
     
-    $.ajax({
-        type: "GET",
-        url: `./candidate-data/datasheets/${param_dict['type']}_candidates.csv`,
-        dataType: "text",
-        success: function(data) {renderPage(data, param_dict);}
-     });
+    if(param_dict["cat"] in taskname && (param_dict["type"]==="jh" || param_dict["type"]==="sh")) {
+        if(param_dict["cat"] != "group") {
+            $.ajax({
+                type: "GET",
+                url: `./candidate-data/datasheets/${param_dict['type']}_candidates.csv`,
+                dataType: "text",
+                success: function(data) {renderIndivPage(data);}
+            });
+        } else {
+            $.ajax({
+                type: "GET",
+                url: `./candidate-data/datasheets/group_${param_dict["type"]}_data.csv`,
+                dataType: "text",
+                success: function(data) {renderGroupPage(data);}
+            });
+        }
+    } else {   
+        $(`#candidate-info`).text(`Error: Invalid parameters (please return to homepage)`);
+    }
 });
 
-function renderPage(rawdata, param_dict) {
+function renderIndivPage(rawdata) {
     let data = $.csv.toObjects(rawdata)
     let cat = param_dict["cat"]
 
@@ -83,9 +96,36 @@ function renderPage(rawdata, param_dict) {
     } else {
         $(`#candidate-info`).text(`Error: Queried ID does not exist (please return to homepage)`);
     }
-    
+}
 
+function renderGroupPage(rawdata) {
+    let data = $.csv.toObjects(rawdata)
+    let cat = param_dict["cat"]
 
+    let group = param_dict["id"]
+    let fullCandidateInfo = {}
+    let successfulRender = false;
 
-    
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]["group_id"].toLowerCase() === group.toLowerCase()) {
+            fullCandidateInfo = data[i]
+            $(`#candidate-info`).text(`${fullCandidateInfo["group_id"]} - ${fullCandidateInfo["members"]}`);
+            successfulRender = true;
+            break;
+        }
+    }
+
+    if (successfulRender) {
+        $(`#displayimage`).removeClass('d-none')
+        let CSVHeaderName = CSVHeader[param_dict["cat"]];
+        let filepath = data[i][CSVHeaderName];
+        if (filepath === "") {
+            $(`#picture`).attr("src","./assets/img/coming-soon.png");
+        } else {
+            $(`#picture`).attr("src",filepath);
+        }
+    } else {
+        $(`#candidate-info`).text(`Error: Queried ID does not exist (please return to homepage)`);
+    }
+
 }

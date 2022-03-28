@@ -19,7 +19,7 @@ const CSVHeader = {
     "profile": "profile",
     "introvid": "introvid-thumbnail",
     "dtalk": "dtalk-thumbnail",
-    "group": "group"
+    "group": "infographic"
 }
 
 let param_dict = {};
@@ -31,52 +31,70 @@ $( function() {
         param_dict[param[0]] = param[1];
     }
 
-    $.ajax({
-        type: "GET",
-        url: `./candidate-data/datasheets/${param_dict["type"]}_candidates.csv`,
-        dataType: "text",
-        success: function(data) {processData(data);}
-     });
-});
-
-function processData(rawdata) {
-    // converts csv data array of objects
-    var data = $.csv.toObjects(rawdata);
-
     // only render valid cat and type queries
     if(param_dict["cat"] in taskname && (param_dict["type"]==="jh" || param_dict["type"]==="sh")) {
-        // change text to match taskname (based on 'cat' in search params)
-        $(`#taskname`).text(`${param_dict["type"].toUpperCase()}: ${taskname[param_dict["cat"]]}`);
-        // change description to match taskname (based on 'cat' in search params)
-        let description = taskdesc[param_dict["cat"]];
-        if (description !== "") {
-            $(`#taskdesc`).removeClass("d-none");
-            $(`#taskname`).addClass("mb-3");
-            $(`#taskdesc`).text(description);
+        if (param_dict["cat"] != "group") {
+            $.ajax({
+                type: "GET",
+                url: `./candidate-data/datasheets/${param_dict["type"]}_candidates.csv`,
+                dataType: "text",
+                success: function(data) {processData(data, true);}
+            });
+        } else {
+            $.ajax({
+                type: "GET",
+                url: `./candidate-data/datasheets/group_${param_dict["type"]}_data.csv`,
+                dataType: "text",
+                success: function(data) {processData(data, false);}
+            });
         }
-        // add class for different colouring (based on 'type' in search params)
-        $(`#header`).addClass(param_dict["type"])
     } else {
         $(`#taskname`).text(`Error: Invalid parameters (please return to homepage)`);
     }
-    
 
+});
+
+function processData(rawdata, isIndividual) {
+    // converts csv data array of objects
+    var data = $.csv.toObjects(rawdata);
+    console.log(data)
+
+    // change text to match taskname (based on 'cat' in search params)
+    $(`#taskname`).text(`${param_dict["type"].toUpperCase()}: ${taskname[param_dict["cat"]]}`);
+    // change description to match taskname (based on 'cat' in search params)
+    let description = taskdesc[param_dict["cat"]];
+    if (description !== "") {
+        $(`#taskdesc`).removeClass("d-none");
+        $(`#taskname`).addClass("mb-3");
+        $(`#taskdesc`).text(description);
+    }
+    // add class for different colouring (based on 'type' in search params)
+    $(`#header`).addClass(param_dict["type"])
+  
     for(var i  = 0; i < data.length; i++) {
         // get contents of template and duplicate (to generate all candidate items)
         contents = $('#template').html();
-        copy = $(`<div id=item${i+1} class="col-lg-4 col-md-6"></div>`);
+        copy = $(`<div id=item${i+1} class="col-lg-4 col-md-6 text-center"></div>`);
         $('#item-placeholder').append(copy.append(contents));
 
         // change text and attributes of template
-        $(`#item${i+1} .identifier`).text(data[i]["id"]);
         let filepath = data[i][CSVHeader[param_dict["cat"]]];
         if (filepath === "") {
             $(`#item${i+1} .picture`).attr("src","./assets/img/coming-soon.png");
         } else {
             $(`#item${i+1} .picture`).attr("src",filepath);
         }
-        $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}`);
-        $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["id"]}`);
-        $(`#item${i+1} .name`).text(data[i]["name"]);
+
+        if (isIndividual) {
+            $(`#item${i+1} .identifier`).text(data[i]["id"]);
+            $(`#item${i+1} .picture`).attr("alt", `${data[i]["id"]} ${data[i]["name"]}`);
+            $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["id"]}`);
+            $(`#item${i+1} .name`).text(data[i]["name"]);
+        } else {
+            $(`#item${i+1} .identifier`).text(data[i]["group_id"]);
+            $(`#item${i+1} .picture`).attr("alt", `${data[i]["group_id"]}`);
+            $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["group_id"]}`);
+            $(`#item${i+1} .name`).text(data[i]["members"]);
+        }
     }
 }
