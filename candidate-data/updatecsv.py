@@ -3,10 +3,17 @@ import pandas as pd
 pd.options.mode.chained_assignment = None  # default='warn'
 
 def update(cat):
-    df = pd.read_csv("./candidate-data/datasheets/"+cat+"_candidates.csv")
+    import pandas as pd
+    df = pd.read_excel("./candidate-data/datasheets/candidate_data_final.xlsx", sheet_name=(cat+"_candidate_data"), engine="openpyxl")
     list_of_ids = list(df['id'])
     list_of_names = list(df['name'])
-    print(list_of_ids)
+
+    df["catalog"] = ""
+    df["profile"] = ""
+    df["introvid-vid"] = ""
+    df["introvid-thumbnail"] = ""
+    df["dtalk-vid"] = ""
+    df["dtalk-thumbnail"] = ""
     
     for i in range(len(list_of_ids)):
         id = list_of_ids[i]
@@ -29,7 +36,8 @@ def update(cat):
             print("DUPLICATE FILE TYPES DETECTED: ID", id)
 
 
-    df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv")
+    df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv", index=False)
     print(cat, "CSV update completed")
 
+update("jh")
 update("sh")
