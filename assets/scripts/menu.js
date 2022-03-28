@@ -95,6 +95,9 @@ function processData(rawdata, isIndividual) {
             $(`#item${i+1} .picture`).attr("alt", `${data[i]["group_id"]}`);
             $(`#item${i+1} a`).attr("href", `./viewer.html?type=${param_dict["type"]}&cat=${param_dict["cat"]}&id=${data[i]["group_id"]}`);
             $(`#item${i+1} .name`).text(data[i]["members"]);
+            $(`#item${i+1} .name`).removeClass("h3");
+            $(`#item${i+1} .name`).addClass("groupmembers");
+            $(`#item${i+1} .name`).addClass("mt-2");
         }
     }
 }
