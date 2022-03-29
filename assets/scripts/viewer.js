@@ -113,8 +113,10 @@ function renderGroupPage(rawdata) {
 
     for (var i = 0; i < data.length; i++) {
         if (data[i]["group_id"].toLowerCase() === group.toLowerCase()) {
-            fullCandidateInfo = data[i]
-            $(`#candidate-info`).text(`${fullCandidateInfo["group_id"]} - ${fullCandidateInfo["members"]}`);
+            fullCandidateInfo = data[i];
+            $(`#candidate-info`).text(`Group ${fullCandidateInfo["group_id"]}`);
+            $(`#group_member_details`).text(fullCandidateInfo["members"]);
+            $(`#group_member_details`).removeClass("d-none");
             successfulRender = true;
             break;
         }

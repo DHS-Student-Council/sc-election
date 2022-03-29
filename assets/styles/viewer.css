@@ -6,6 +6,12 @@
     height: 95vh;
     min-height: 100%;
 }
+#group_member_details {
+    font-size: 1.2em;
+    border-top: 1px solid white;
+    max-width:40em;
+    margin: auto;
+}
 
 #header {
     background-color: #666;
