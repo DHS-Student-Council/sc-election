@@ -84,12 +84,19 @@ function renderIndivPage(rawdata) {
         } else {
             let CSVHeaderName = CSVHeader[param_dict["cat"]];
             let videolink = data[i][CSVHeaderName];
+            
             const videohtml = `
             <video id="player" playsinline controls data-poster="">
                 <source id="vidsrc" src="${videolink}" type="video/mp4" />
             </video>
             `;
-            $("#displayvideo").append(videohtml);
+            if (videolink !== "") {
+                $("#displayvideo").append(videohtml);
+            } else {
+                $("#displayvideo").addClass('d-none');
+                $("#displayimage").removeClass("d-none");
+                $(`#picture`).attr("src","./assets/img/coming-soon.png");
+            }
             const player = new Plyr('#player', {
                 controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
             });
