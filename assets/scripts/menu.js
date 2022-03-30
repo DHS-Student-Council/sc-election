@@ -10,8 +10,8 @@ const taskdesc = {
     "catalog": "",
     "profile": "Candidates to design an individual poster to introduce themselves, letting the student body learn more about themselves, their goals, visions and reasons for running for SC.",
     "introvid": "Candidates to come up with a short 15-30s video that helps with self introduction. This platform allows candidates to unleash their creativity and let the student population see more of the candidate's personalities.",
-    "dtalk": "Candidates are forced to think on their feet one of two questions, showing candidate’s creativity and adaptability.",
-    "group": "Groups create initiatives based off SC related keywords"
+    "dtalk": "Candidates are required to answer one out of two questions on the spot, showcasing their creativity and adaptability.",
+    "group": "Candidates are grouped and tasked to propose an initiative based off a SC related keyword to enhance the experiences for the student population in Dunman High."
 }
 
 const CSVHeader = {
