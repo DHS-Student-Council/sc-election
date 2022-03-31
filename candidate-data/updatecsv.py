@@ -20,7 +20,7 @@ keywords = {
     "introvid-vid": "intro_video",
     "introvid-thumbnail": "intro_thumbnail",
     "dtalk-vid": None,
-    "dtalk-thumbnail": "##this value should never be accomplished##" # function update() sets any file which fails above values to dtalk-thumbnail
+    "dtalk-thumbnail": "dtalk_thumbnail"
 }
 
 def update(cat):
@@ -45,7 +45,7 @@ def update(cat):
             if success > 1:
                 print(f"Filepath matched more than 1 keyword: Matched {success} times. ID: {id}, filepath: {id} {name}/{filename}")
             elif success == 0:
-                df["dtalk-thumbnail"][i] = "./candidate-data/" + id + " " + name + "/" + filename
+                print(f"Filepath matched 0 keywords. ID: {id}, filepath: {id} {name}/{filename}")
 
     df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv", index=False)
     print(cat, "CSV update completed")
