@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DHS Elections</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    img {
+	    width: 50vw;
+    }
+
+    .profile, .infographic {
+      width: 40vw;
+      margin: 0px 30px;
+    }
+
+    video {
+      width: 90vw;
+    }
+
+    iframe {
+      width: 90vw;
+      height: 50.625vw;
+    }
+
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 0px 15px 15px;
+      overflow-wrap: break-word;
+    }
+
+    .row1, .row2, .row3, .row4 {
+      display: flex;
+      justify-content: center;
+      margin: 35px 0px;
+    }
+	</style>
+</head>
+
+<body>
+	<div class="row1">
+		<div>
+			<p>Candidate Picture</p>
+			<img src="DH01 Jaimie Ong/DH01_feature wall.png" alt="DH01">
+		</div>
+	</div>
+
+	<div class="row2">
+		<div>
+			<p>Introductory Video</p>
+			<video playsinline controls>
+				<source src="DH01 Jaimie Ong/DH01_intro_video.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+	<div class="row3">
+		<div>
+			<p>Candidate Profile</p>
+			<img src="DH01 Jaimie Ong/DH01_profile.png" alt="DH01 Candidate Profile" class="profile">
+		</div>
+		<div>
+			<p>Group Infographic</p>
+			<img src="DH01 Jaimie Ong/GR01_fpp_infographic.png" alt="GR01 Infographic" class="infographic">
+		</div>
+	</div>
+
+	<div class="row4">
+		<div>
+			<p>D'TALK</p>
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/xgiBmrwjhh8">
+			</iframe>
+		</div>
+	</div>
+	
+  <script src="script.js"></script>
+</body>
+
+</html>
