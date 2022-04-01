@@ -70,9 +70,7 @@ function renderIndivPage(rawdata) {
 
     if (successfulRender) {
         $(`#${enableDiv[cat]}`).removeClass('d-none')
-        if (enableDiv[cat] === "displayfullprofile") {
-
-        } else if (enableDiv[cat] === "displayimage") {
+        if (enableDiv[cat] === "displayimage") {
             let CSVHeaderName = CSVHeader[param_dict["cat"]];
             let filepath = data[i][CSVHeaderName];
             if (filepath === "") {
