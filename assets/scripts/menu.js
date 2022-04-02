@@ -80,7 +80,7 @@ function processData(rawdata, isIndividual) {
         // change text and attributes of template
         let filepath = data[i][CSVHeader[param_dict["cat"]]];
         if (filepath === "") {
-            $(`#item${i+1} .picture`).attr("src","./assets/img/coming-soon.png");
+            $(`#item${i+1} .picture`).attr("src","./assets/img/coming_soon.png");
         } else {
             $(`#item${i+1} .picture`).attr("src",filepath);
         }

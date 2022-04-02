@@ -74,7 +74,7 @@ function renderIndivPage(rawdata) {
             let CSVHeaderName = CSVHeader[param_dict["cat"]];
             let filepath = data[i][CSVHeaderName];
             if (filepath === "") {
-                $(`#picture`).attr("src","./assets/img/coming-soon.png");
+                $(`#picture`).attr("src","./assets/img/coming_soon.png");
             } else {
                 $(`#picture`).attr("src",filepath);
             }
@@ -93,7 +93,7 @@ function renderIndivPage(rawdata) {
             } else {
                 $("#displayvideo").addClass('d-none');
                 $("#displayimage").removeClass("d-none");
-                $(`#picture`).attr("src","./assets/img/coming-soon.png");
+                $(`#picture`).attr("src","./assets/img/coming_soon.png");
             }
             const player = new Plyr('#player', {
                 controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
@@ -132,7 +132,7 @@ function renderGroupPage(rawdata) {
         let CSVHeaderName = CSVHeader[param_dict["cat"]];
         let filepath = data[i][CSVHeaderName];
         if (filepath === "") {
-            $(`#picture`).attr("src","./assets/img/coming-soon.png");
+            $(`#picture`).attr("src","./assets/img/coming_soon.png");
         } else {
             $(`#picture`).attr("src",filepath);
         }
