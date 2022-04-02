@@ -20,9 +20,10 @@ def update(cat):
 
     for i in group_dict.keys():
         group_dict[i] = [i, ', '.join(group_dict[i])]
-        for filename in os.listdir("./candidate-data/" +cat+ "_groupwork/"):
+        for filename in os.listdir("./candidate-data/assets/" +cat+ "_groupwork/"):
             if i.upper() in filename.upper():
-                group_dict[i].append("./candidate-data/" +cat+ "_groupwork/"+filename)
+                group_dict[i].append("./candidate-data/assets/" +cat+ "_groupwork/"+filename)
+        group_dict[i].append("") # COMMENT OUT THIS LINE IF THERE IS AN ACTUAL INFOGRAPHIC
                 
     df_new = pd.DataFrame.from_dict(group_dict, orient="index", columns=["group_id", "members", "infographic"])
     df_new.to_csv("./candidate-data/datasheets/group_"+cat+"_data.csv", index=False)

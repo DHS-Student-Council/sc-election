@@ -1,19 +1,38 @@
 id,name,group_id,catalog,profile,introvid-vid,introvid-thumbnail,dtalk-vid,dtalk-thumbnail
-DH01,Jaimie Ong,J01,./candidate-data/DH01 Jaimie Ong/DH01_feature wall.png,./candidate-data/DH01 Jaimie Ong/DH01_profile.png,./candidate-data/DH01 Jaimie Ong/DH01_intro_video.mp4,./candidate-data/DH01 Jaimie Ong/DH01_intro_thumbnail.png,,./candidate-data/DH01 Jaimie Ong/DH01_dtalk_thumbnail.png
-DH02,Liu Xingyu,J01,./candidate-data/DH02 Liu Xingyu/DH02_feature wall.jpg,./candidate-data/DH02 Liu Xingyu/DH02_profile.png,./candidate-data/DH02 Liu Xingyu/DH02_intro_video.mp4,./candidate-data/DH02 Liu Xingyu/DH02_intro_thumbnail.png,,./candidate-data/DH02 Liu Xingyu/DH02_dtalk_thumbnail.png
-DH03,Marissa Tan,J01,./candidate-data/DH03 Marissa Tan/DH03_feature wall.png,./candidate-data/DH03 Marissa Tan/DH03_profile.png,./candidate-data/DH03 Marissa Tan/DH03_intro_video.mp4,./candidate-data/DH03 Marissa Tan/DH03_intro_thumbnail.png,,./candidate-data/DH03 Marissa Tan/DH03_dtalk_thumbnail.png
-DH04,Tok Lee Joon,J01,./candidate-data/DH04 Tok Lee Joon/DH04_feature wall.jpg,./candidate-data/DH04 Tok Lee Joon/DH04_profile.png,./candidate-data/DH04 Tok Lee Joon/DH04_intro_video.mp4,./candidate-data/DH04 Tok Lee Joon/DH04_intro_thumbnail.png,,./candidate-data/DH04 Tok Lee Joon/DH04_dtalk_thumbnail.png
-DH05,Shernace Seet,J01,./candidate-data/DH05 Shernace Seet/DH05_feature wall.jpg,./candidate-data/DH05 Shernace Seet/DH05_profile.png,./candidate-data/DH05 Shernace Seet/DH05_intro_video.mp4,./candidate-data/DH05 Shernace Seet/DH05_intro_thumbnail.png,,./candidate-data/DH05 Shernace Seet/DH05_dtalk_thumbnail.png
-DH06,Tan Jing Xi,J02,./candidate-data/DH06 Tan Jing Xi/DH06_feature wall.jpg,./candidate-data/DH06 Tan Jing Xi/DH06_profile.png,./candidate-data/DH06 Tan Jing Xi/DH06_intro_video.mp4,./candidate-data/DH06 Tan Jing Xi/DH06_intro_thumbnail.png,,./candidate-data/DH06 Tan Jing Xi/DH06_dtalk_thumbnail.png
-DH07,Shawn Loh,J02,./candidate-data/DH07 Shawn Loh/DH07_feature wall.png,./candidate-data/DH07 Shawn Loh/DH07_profile.png,./candidate-data/DH07 Shawn Loh/DH07_intro_video.mp4,./candidate-data/DH07 Shawn Loh/DH07_intro_thumbnail.png,,./candidate-data/DH07 Shawn Loh/DH07_dtalk_thumbnail.png
-DH08,Low An Qi,J02,./candidate-data/DH08 Low An Qi/DH08_feature wall.png,./candidate-data/DH08 Low An Qi/DH08_profile.png,./candidate-data/DH08 Low An Qi/DH08_intro_video.mp4,./candidate-data/DH08 Low An Qi/DH08_intro_thumbnail.png,,./candidate-data/DH08 Low An Qi/DH08_dtalk_thumbnail.png
-DH09,Meryl Nga,J02,./candidate-data/DH09 Meryl Nga/DH09_feature wall.jpg,./candidate-data/DH09 Meryl Nga/DH09_profile.png,./candidate-data/DH09 Meryl Nga/DH09_intro_video.mp4,./candidate-data/DH09 Meryl Nga/DH09_intro_thumbnail.png,,./candidate-data/DH09 Meryl Nga/DH09_dtalk_thumbnail.png
-DH10,Charlotte Yap,J02,./candidate-data/DH10 Charlotte Yap/DH10_feature wall.jpg,./candidate-data/DH10 Charlotte Yap/DH10_profile.png,./candidate-data/DH10 Charlotte Yap/DH10_intro_video.mp4,./candidate-data/DH10 Charlotte Yap/DH10_intro_thumbnail.png,,./candidate-data/DH10 Charlotte Yap/DH10_dtalk_thumbnail.png
-DH11,Shannon Kee,J03,./candidate-data/DH11 Shannon Kee/DH11_feature wall.jpg,./candidate-data/DH11 Shannon Kee/DH11_profile.png,./candidate-data/DH11 Shannon Kee/DH11_intro_video.mp4,./candidate-data/DH11 Shannon Kee/DH11_intro_thumbnail.png,,./candidate-data/DH11 Shannon Kee/DH11_dtalk_thumbnail.png
-DH12,Han YiHeng,J03,./candidate-data/DH12 Han YiHeng/DH12_feature wall.jpeg,./candidate-data/DH12 Han YiHeng/DH12_profile.png,./candidate-data/DH12 Han YiHeng/DH12_intro_video.mp4,./candidate-data/DH12 Han YiHeng/DH12_intro_thumbnail.png,,./candidate-data/DH12 Han YiHeng/DH12_dtalk_thumbnail.png
-DH13,Yap Hui Xuan,J03,./candidate-data/DH13 Yap Hui Xuan/DH13_feature wall.jpg,./candidate-data/DH13 Yap Hui Xuan/DH13_profile.png,./candidate-data/DH13 Yap Hui Xuan/DH13_intro_video.mp4,./candidate-data/DH13 Yap Hui Xuan/DH13_intro_thumbnail.png,,./candidate-data/DH13 Yap Hui Xuan/DH13_dtalk_thumbnail.png
-DH14,Lock Yi Yin,J03,./candidate-data/DH14 Lock Yi Yin/DH14_feature wall.png,./candidate-data/DH14 Lock Yi Yin/DH14_profile.png,./candidate-data/DH14 Lock Yi Yin/DH14_intro_video.mp4,./candidate-data/DH14 Lock Yi Yin/DH14_intro_thumbnail.png,,./candidate-data/DH14 Lock Yi Yin/DH14_dtalk_thumbnail.png
-DH15,Eunice Hoo,J04,./candidate-data/DH15 Eunice Hoo/DH15_feature wall.png,./candidate-data/DH15 Eunice Hoo/DH15_profile.png,./candidate-data/DH15 Eunice Hoo/DH15_intro_video.mp4,./candidate-data/DH15 Eunice Hoo/DH15_intro_thumbnail.png,,./candidate-data/DH15 Eunice Hoo/DH15_dtalk_thumbnail.png
-DH16,Nicholas Loh,J04,./candidate-data/DH16 Nicholas Loh/DH16_feature wall.jpg,./candidate-data/DH16 Nicholas Loh/DH16_profile.png,./candidate-data/DH16 Nicholas Loh/DH16_intro_video.mp4,./candidate-data/DH16 Nicholas Loh/DH16_intro_thumbnail.png,,./candidate-data/DH16 Nicholas Loh/DH16_dtalk_thumbnail.png
-DH17,Putri Lie,J04,./candidate-data/DH17 Putri Lie/DH17_feature wall.jpg,./candidate-data/DH17 Putri Lie/DH17_profile.png,./candidate-data/DH17 Putri Lie/DH17_intro_video.mp4,./candidate-data/DH17 Putri Lie/DH17_intro_thumbnail.png,,./candidate-data/DH17 Putri Lie/DH17_dtalk_thumbnail.png
-DH18,Samantha Chan,J04,./candidate-data/DH18 Samantha Chan/DH18_feature wall.jpeg,./candidate-data/DH18 Samantha Chan/DH18_profile.png,./candidate-data/DH18 Samantha Chan/DH18_intro_video.mp4,./candidate-data/DH18 Samantha Chan/DH18_intro_thumbnail.png,,./candidate-data/DH18 Samantha Chan/DH18_dtalk_thumbnail.png
+DH01,Ang Yu Tong,J1,./candidate-data/assets/DH01 Ang Yu Tong/DH01_featurewall.jpeg,,,,,
+DH02,Tara Li Jia En,J1,./candidate-data/assets/DH02 Tara Li Jia En/DH02_featurewall.jpeg,,,,,
+DH03,Tan Yan Kai,J1,./candidate-data/assets/DH03 Tan Yan Kai/DH03_featurewall.jpeg,,,,,
+DH04,Charlotte Tham,J1,./candidate-data/assets/DH04 Charlotte Tham/DH04_featurewall.jpeg,,,,,
+DH05,Yan Ching,J1,./candidate-data/assets/DH05 Yan Ching/DH05_featurewall.jpeg,,,,,
+DH06,Ngiam Yi Lee,J2,./candidate-data/assets/DH06 Ngiam Yi Lee/DH06_featurewall.jpeg,,,,,
+DH07,Chu Yun Xuan,J2,./candidate-data/assets/DH07 Chu Yun Xuan/DH07_featurewall.jpeg,,,,,
+DH08,Tay Keong Teng Zachery,J2,./candidate-data/assets/DH08 Tay Keong Teng Zachery/DH08_featurewall.jpeg,,,,,
+DH09,Fallace Poh,J2,./candidate-data/assets/DH09 Fallace Poh/DH09_featurewall.jpeg,,,,,
+DH10,Tan Sze Suan Janessa,J2,./candidate-data/assets/DH10 Tan Sze Suan Janessa/DH10_featurewall.jpeg,,,,,
+DH11,Sng Ying Jing Giselle,J3,./candidate-data/assets/DH11 Sng Ying Jing Giselle/DH11_featurewall.jpeg,,,,,
+DH12,Nexus Ang Chen Joon,J3,./candidate-data/assets/DH12 Nexus Ang Chen Joon/DH12_featurewall.jpeg,,,,,
+DH13,Heather Chen Siyu,J3,./candidate-data/assets/DH13 Heather Chen Siyu/DH13_featurewall.jpeg,,,,,
+DH14,Ong Fang Wen,J3,./candidate-data/assets/DH14 Ong Fang Wen/DH14_featurewall.jpeg,,,,,
+DH15,Faith Vivienne Lee Zhi Yan,J3,./candidate-data/assets/DH15 Faith Vivienne Lee Zhi Yan/DH15_featurewall.jpeg,,,,,
+DH16,Lee Ling Xuan Chloe,J4,./candidate-data/assets/DH16 Lee Ling Xuan Chloe/[To be deleted] DH16_featurewall.jpeg,,,,,
+DH17,Wong Jing Ling,J4,./candidate-data/assets/DH17 Wong Jing Ling/DH17_featurewall.jpg,,,,,
+DH18,Chiew Yeam Tong,J4,./candidate-data/assets/DH18 Chiew Yeam Tong/DH18_featurewall.jpeg,,,,,
+DH19,Wong Zi Xuan Jermaine,J4,./candidate-data/assets/DH19 Wong Zi Xuan Jermaine/DH19_featurewall.jpeg,,,,,
+DH21,Ng Ying Xuan,J5,./candidate-data/assets/DH21 Ng Ying Xuan/DH21_featurewall.jpeg,,,,,
+DH23,Caitlin Agus,J5,./candidate-data/assets/DH23 Caitlin Agus/DH23_featurewall.jpeg,,,,,
+DH24,Li Ruihan,J5,./candidate-data/assets/DH24 Li Ruihan/DH24_featurewall.jpeg,,,,,
+DH25,"Yeo Li Ann, Kyra",J5,"./candidate-data/assets/DH25 Yeo Li Ann, Kyra/DH25_featurewall.jpeg",,,,,
+DH26,Yew En Ting Julia,J6,./candidate-data/assets/DH26 Yew En Ting Julia/DH26_featurewall.jpeg,,,,,
+DH27,Feng Yat Kiu Ashley,J6,./candidate-data/assets/DH27 Feng Yat Kiu Ashley/DH27_featurewall.jpeg,,,,,
+DH28,Summer Renee Quek,J6,./candidate-data/assets/DH28 Summer Renee Quek/DH28_featurewall.jpeg,,,,,
+DH29,Lim Yen Ray Klemens,J6,./candidate-data/assets/DH29 Lim Yen Ray Klemens/DH29_featurewall.jpeg,,,,,
+DH30,Wong Xin Yu,J6,./candidate-data/assets/DH30 Wong Xin Yu/DH30_featurewall.jpeg,,,,,
+DH31,Jennabel Ng,J7,./candidate-data/assets/DH31 Jennabel Ng/DH31_featurewall.jpeg,,,,,
+DH32,Ho Qian Yi,J7,./candidate-data/assets/DH32 Ho Qian Yi/DH32_featurewall.jpeg,,,,,
+DH33,Nicole Tan,J7,./candidate-data/assets/DH33 Nicole Tan/DH33_featurewall.jpeg,,,,,
+DH34,Onn Qi Huan,J7,./candidate-data/assets/DH34 Onn Qi Huan/DH34_featurewall.jpeg,,,,,
+DH35,Jackie Chan Kwang Jun,J7,./candidate-data/assets/DH35 Jackie Chan Kwang Jun/DH35_featurewall.jpeg,,,,,
+DH36,Dora Lin Xin Er,J8,./candidate-data/assets/DH36 Dora Lin Xin Er/DH36_featurewall.jpeg,,,,,
+DH37,Jamie Koh Kit Min,J8,./candidate-data/assets/DH37 Jamie Koh Kit Min/DH37_featurewall.jpeg,,,,,
+DH38,Woo Kai Ching,J8,./candidate-data/assets/DH38 Woo Kai Ching/DH38_featurewall.jpeg,,,,,
+DH39,Zhang Xiangrui,J8,./candidate-data/assets/DH39 Zhang Xiangrui/DH39_featurewall.JPG,,,,,
