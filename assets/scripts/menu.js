@@ -57,7 +57,6 @@ $( function() {
 function processData(rawdata, isIndividual) {
     // converts csv data array of objects
     var data = $.csv.toObjects(rawdata);
-    console.log(data)
 
     // change text to match taskname (based on 'cat' in search params)
     $(`#taskname`).text(`${param_dict["type"].toUpperCase()}: ${taskname[param_dict["cat"]]}`);

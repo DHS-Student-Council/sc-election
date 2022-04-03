@@ -12,16 +12,13 @@ $( function() {
         if(path === "/index.html" || path === "/") {
             $("a#homepage").addClass("active");
             $("a#homepage").attr("aria-current", "page");
-            console.log('ran index')
         } else {
             $("a[href*='" + path + location.search + "']").addClass("active");
             $("a[href*='" + path + location.search + "']").attr("aria-current", "page");
-            console.log('ran other')
         }
 
         if ("type" in param_dict) {
             $("a[data-headertype*='" + param_dict["type"] + "']").addClass("active");
-            console.log('ran other')
         }
     });
 });
