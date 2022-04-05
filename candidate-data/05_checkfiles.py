@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-movekeywords = ["featurewall"]
-expectfiles = 1
+# movekeywords = ["featurewall"]
+expectfiles = 2
 
 def movefile(cat):
     df = pd.read_excel("./candidate-data/datasheets/candidate_data_final.xlsx", sheet_name=(cat+"_candidate_data"), engine="openpyxl")

@@ -18,7 +18,7 @@ keywords = {
     "id": None,
     "name": None,
     "catalog": "featurewall",
-    "profile": None, #"profile",
+    "profile": "profile",
     "introvid-vid": None, #"intro_video",
     "introvid-thumbnail": None, #"intro_thumbnail",
     "dtalk-vid": None,
