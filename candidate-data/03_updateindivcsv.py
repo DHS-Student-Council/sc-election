@@ -19,8 +19,8 @@ keywords = {
     "name": None,
     "catalog": "featurewall",
     "profile": "profile",
-    "introvid-vid": None, #"intro_video",
-    "introvid-thumbnail": None, #"intro_thumbnail",
+    "introvid-vid": "intro_video",
+    "introvid-thumbnail": "intro_thumbnail",
     "dtalk-vid": None,
     "dtalk-thumbnail": None, #"dtalk_thumbnail"
 }
@@ -44,6 +44,11 @@ def update(cat):
                 if keywords[key] != None and keywords[key] in filename:
                     df[key][i] = "./candidate-data/assets/" + id + " " + name + "/" + filename
                     success += 1
+                    if keywords[key] == "intro_video" and "mov" in filename:
+                        print(f"Illegal file extension used. ID: {id}, filepath: {id} {name}/{filename}")
+                    filesize = (os.stat("./candidate-data/assets/" + id + " " + name + "/" + filename).st_size)/1000000
+                    if filesize>49.5: # 0.5mb buffer range for inaccurate calc
+                        print(f"Filesize exceeds 50mb limit. ID: {id}, filepath: {id} {name}/{filename}, filesize: {filesize*100//1/100}")
             if success > 1:
                 print(f"Filepath matched more than 1 keyword: Matched {success} times. ID: {id}, filepath: {id} {name}/{filename}")
             elif success == 0:

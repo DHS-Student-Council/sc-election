@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-movekeywords = ["profile"]
-expectfiles = 2
+movekeywords = ["intro_video", "intro_thumbnail"]
+expectfiles = 4
 
 def expandfile(): 
     for filename in os.listdir("./candidate-data/temp"):
@@ -29,17 +29,6 @@ def movefile(cat):
             for i in movekeywords:
                 if i in filename and "DELETE" not in filename.upper():
                     os.rename(f"./candidate-data/temp/{fullname}/{filename}", f"./candidate-data/assets/{fullname}/{filename}")
-
-    for i in range(len(list_of_ids)):
-        id = list_of_ids[i]
-        name = list_of_names[i]
-        fullname = id + " " + name
-        k = 0
-        for filename in os.listdir(f"./candidate-data/assets/{fullname}"):
-            if "DS_Store" not in filename:
-                k += 1
-        if k != expectfiles:
-            print(f"NUMBER OF FILES DIFFERS FROM EXPECTED, FILES: {k}, ID: {id}")
 
 
     print(f"SUCCESSFULLY UPDATED {cat}")
