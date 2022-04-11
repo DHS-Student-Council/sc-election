@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-keywords = ["featurewall", "profile", "intro_video", "intro_thumbnail", "dtalk"]
-expectfiles = 5
+keywords = ["featurewall", "profile", "intro_video", "intro_thumbnail", "dtalk_video", "dtalk_thumbnail"]
+expectfiles = 6
 
 def checkfile(cat):
     df = pd.read_excel("./candidate-data/datasheets/candidate_data_final.xlsx", sheet_name=(cat+"_candidate_data"), engine="openpyxl")
@@ -10,13 +10,7 @@ def checkfile(cat):
     list_of_names = list(df['name'])
 
     for i in range(len(list_of_ids)):
-        keyword_dict = {
-            "featurewall": 0,
-            "profile": 0,
-            "intro_video": 0,
-            "intro_thumbnail": 0,
-            "dtalk": 0
-        }
+        keyword_dict = dict.fromkeys(keywords, 0)
         id = list_of_ids[i]
         name = list_of_names[i]
         fullname = id + " " + name

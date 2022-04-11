@@ -3,18 +3,23 @@ import cv2
 import pandas as pd
 from PIL import Image
 
+warn_if_thumbnail_exists = False
+
 # !! YOU MAY NEED TO RUN 03_updateindivcsv.py again
 # !! YOU MAY NEED TO RUN 03_updategroupcsv.py again
 
 def getFrame(id, name):
     video_filepath = f"./candidate-data/assets/{id} {name}/{id}_dtalk_video.mp4"
-    vidcap = cv2.VideoCapture(video_filepath)
-    success, image = vidcap.read()
-    for i in range(20):
+    thumbnail_path = f"./candidate-data/assets/{id} {name}/{id}_dtalk_thumbnail.jpg"
+    if not os.path.exists(thumbnail_path):
+        vidcap = cv2.VideoCapture(video_filepath)
         success, image = vidcap.read()
-    if success:
-        thumbnail_path = f"./candidate-data/assets/{id} {name}/{id}_dtalk_thumbnail.jpg"
-        cv2.imwrite(thumbnail_path, image)
+        for i in range(20):
+            success, image = vidcap.read()
+        if success:
+            cv2.imwrite(thumbnail_path, image)
+    elif warn_if_thumbnail_exists:
+        print(f"!WARNING: Thumbnail exists for ID: {id}, filepath: {thumbnail_path}")
 
 def updateFrames(cat):
     df = pd.read_excel("./candidate-data/datasheets/candidate_data_final.xlsx", sheet_name=(cat+"_candidate_data"), engine="openpyxl")
@@ -28,3 +33,4 @@ def updateFrames(cat):
     print(f"!LOG: Successfully updated {cat}")
 
 updateFrames("jh")
+updateFrames("sh")

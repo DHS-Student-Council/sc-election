@@ -50,7 +50,7 @@ def update(cat):
                         print(f"!ERROR: Filesize exceeds 50mb limit. ID: {id}, filepath: {id} {name}/{filename}, filesize: {filesize*100//1/100}")
             if success > 1:
                 print(f"!ERROR: Filepath matched more than 1 keyword: Matched {success} times. ID: {id}, filepath: {id} {name}/{filename}")
-            elif success == 0:
+            elif success == 0 and "DS_Store" not in filename:
                 print(f"!ERROR: Filepath matched 0 keywords. ID: {id}, filepath: {id} {name}/{filename}")
 
     df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv", index=False)

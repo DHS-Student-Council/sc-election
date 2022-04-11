@@ -21,7 +21,7 @@ it iterates through every candidate [A] -> looks at every file in their folder [
 """
 
 movekeywords = ["intro_video", "intro_thumbnail"]
-expectfiles = 4
+expectfiles = 6
 
 def expandfile(): 
     for filename in os.listdir("./candidate-data/temp"):
