@@ -12,7 +12,7 @@ def create_directory(cat):
             newpath = "./candidate-data/assets/" + list_of_ids[i] + " " + list_of_names[i] +  "/"
             if not os.path.exists(newpath):
                 os.makedirs(newpath)
-    print(f"SUCCESSFULLY UPDATED {cat}")
+    print(f"!LOG: Successfully updated {cat}")
     
 create_directory("jh")
 create_directory("sh")

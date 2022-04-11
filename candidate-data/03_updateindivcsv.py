@@ -21,12 +21,11 @@ keywords = {
     "profile": "profile",
     "introvid-vid": "intro_video",
     "introvid-thumbnail": "intro_thumbnail",
-    "dtalk-vid": None,
-    "dtalk-thumbnail": None, #"dtalk_thumbnail"
+    "dtalk-vid": "dtalk_video",
+    "dtalk-thumbnail": "dtalk_thumbnail"
 }
 
 def update(cat):
-    import pandas as pd
     df = pd.read_excel("./candidate-data/datasheets/candidate_data_final.xlsx", sheet_name=(cat+"_candidate_data"), engine="openpyxl")
     list_of_ids = list(df['id'])
     list_of_names = list(df['name'])
@@ -45,17 +44,17 @@ def update(cat):
                     df[key][i] = "./candidate-data/assets/" + id + " " + name + "/" + filename
                     success += 1
                     if keywords[key] == "intro_video" and "mov" in filename:
-                        print(f"Illegal file extension used. ID: {id}, filepath: {id} {name}/{filename}")
+                        print(f"!ERROR: Illegal file extension used. ID: {id}, filepath: {id} {name}/{filename}")
                     filesize = (os.stat("./candidate-data/assets/" + id + " " + name + "/" + filename).st_size)/1000000
                     if filesize>49.5: # 0.5mb buffer range for inaccurate calc
-                        print(f"Filesize exceeds 50mb limit. ID: {id}, filepath: {id} {name}/{filename}, filesize: {filesize*100//1/100}")
+                        print(f"!ERROR: Filesize exceeds 50mb limit. ID: {id}, filepath: {id} {name}/{filename}, filesize: {filesize*100//1/100}")
             if success > 1:
-                print(f"Filepath matched more than 1 keyword: Matched {success} times. ID: {id}, filepath: {id} {name}/{filename}")
+                print(f"!ERROR: Filepath matched more than 1 keyword: Matched {success} times. ID: {id}, filepath: {id} {name}/{filename}")
             elif success == 0:
-                print(f"Filepath matched 0 keywords. ID: {id}, filepath: {id} {name}/{filename}")
+                print(f"!ERROR: Filepath matched 0 keywords. ID: {id}, filepath: {id} {name}/{filename}")
 
     df.to_csv("./candidate-data/datasheets/"+cat+"_candidates.csv", index=False)
-    print(cat, "CSV update completed")
+    print("!LOG",cat, "CSV update completed")
 
 update("jh")
 update("sh")

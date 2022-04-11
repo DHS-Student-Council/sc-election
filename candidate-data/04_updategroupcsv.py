@@ -28,7 +28,7 @@ def update(cat):
     df_new = pd.DataFrame.from_dict(group_dict, orient="index", columns=["group_id", "members", "infographic"])
     df_new.to_csv("./candidate-data/datasheets/group_"+cat+"_data.csv", index=False)
 
-    print(cat,"CSV update completed")
+    print("!LOG:",cat,"CSV update completed")
 
     
 update("jh")

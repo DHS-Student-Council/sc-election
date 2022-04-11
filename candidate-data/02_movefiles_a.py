@@ -1,6 +1,25 @@
 import os
 import pandas as pd
 
+# move files
+"""
+the naming convention is
+Group ~ to ~
+    DHXX JOHN
+        file1
+        file2
+        file3
+    DHXX MARY
+        file1
+        file2
+        file3
+expandfile() pulls candidate folders out of group folder. DO NOT EXPAND FILES IF ALREADY EXPANDED. INDIVIDUAL FILES WILL BE LOST
+movefile() moves the files from the temporary folder to the correct candidate-data folder
+
+keywords indicate the keywords to look for
+it iterates through every candidate [A] -> looks at every file in their folder [B] -> checks keyword, if match then move -> reiterate to B -> reiterate to A
+"""
+
 movekeywords = ["intro_video", "intro_thumbnail"]
 expectfiles = 4
 
@@ -31,7 +50,7 @@ def movefile(cat):
                     os.rename(f"./candidate-data/temp/{fullname}/{filename}", f"./candidate-data/assets/{fullname}/{filename}")
 
 
-    print(f"SUCCESSFULLY UPDATED {cat}")
+    print(f"!LOG: Successfully updated {cat}")
 
 expandfile()
 movefile("jh")
