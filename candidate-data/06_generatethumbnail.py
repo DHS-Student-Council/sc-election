@@ -6,7 +6,7 @@ from PIL import Image
 warn_if_thumbnail_exists = False
 
 # !! YOU MAY NEED TO RUN 03_updateindivcsv.py again
-# !! YOU MAY NEED TO RUN 03_updategroupcsv.py again
+# !! YOU MAY NEED TO RUN 04_updategroupcsv.py again
 
 def getFrame(id, name):
     video_filepath = f"./candidate-data/assets/{id} {name}/{id}_dtalk_video.mp4"
