@@ -69,6 +69,8 @@ Note: all development scripts (python files) is found in `./candidate-data/...`
 - [jQuery v3.6.0](https://api.jquery.com/)
 
 # Others
-Have fun?
+Note: the final state of this directory does not include code for the president, house captains, etc. and WILL PRESENT COMPATIBILITY ISSUES in implementation.
 
-Request the SCs to use the same format as much as possible to make this as painless as possible.
+You'll probably need to re-factor some of the rendering scripts to improve on this. 
+
+Thanks.
